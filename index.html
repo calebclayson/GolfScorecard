@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Golf Scorecard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script defer src="js/main.js"></script>
 </head>
-<body>
-    
+
+<body onload="displayDataToPage()">
+    <select id="tees" onchange="displayDataToPage()"></select>
+    <div class="grid-container">
+        <div class="hole-row">
+            <div class="label">Holes</div>
+        </div>
+        <div class="yardage-row">
+            <div class="label">Yardage</div>
+        </div>
+        <div class="handicap-row">
+            <div class="label">Handicap</div>
+        </div>
+        <div class="par-row">
+            <div class="label">Par</div>
+        </div>
+        <div class="score-row">
+            <div class="label">Score</div>
+        </div>
+    </div>
 </body>
+
 </html>
