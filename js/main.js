@@ -134,6 +134,7 @@ function totalBox() {
         let totalBox = `<div class="totals">
         <div class="total-label">Total Score</div>
         <div class="total-par"></div>
+        <div class="total-yards"></div>
         <div class="total-p1"></div>
         <div class="total-p2"></div>
         <div class="total-p3"></div>
@@ -156,6 +157,17 @@ function totalBoxUpdate() {
     for(let i = 0; i < pars.length; i++){
         totalPar += Number(pars[i]);
     }
+    let yards = [];
+    for(let i = 1; i < $('.grid-container').children().length; i++) {
+        let yardString = String($(`#col${i}`).find('.yard-label').html());
+        let yard = Number(yardString.split(' ')[0]);
+        yards.push(yard);
+    }
+    let totalYards = 0;
+    for(let i = 0; i < yards.length; i++) {
+        totalYards += Number(yards[i]);
+    }
+    $('.total-yards').html(`The total yards is ${totalYards}`);
     $('.total-par').html(`The total par is ${totalPar}`);
     if(p1score > 0) {
         $('.total-p1').html('');
@@ -184,7 +196,6 @@ function totalBoxUpdate() {
 }
 
 function totals(e) {
-    console.log($(e).parent().parent().index());
     if($(e).attr('id').charAt(1) == '1') {
         if($(e).parent().parent().index() < mycourse.holes.length/2) {
             p1score += Number($(e).val());
