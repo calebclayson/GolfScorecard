@@ -235,17 +235,17 @@ function totals(e) {
     }
     if($(e).parent().parent().index() == 17) {
         if(p1score - totalPar > 0) {
-            $(body).html("");
+            $('.body').html("");
             let div = `<div class="final">Your score is ${p1score - totalPar} over par</div>`;
-            $(body).html(div);
+            $('.body').html(div);
         } else if(p1score - totalPar < 0) {
-            $(body).html("");
+            $('.body').html("");
             let div = `<div class="final">Your score is ${-(p1score-totalPar)} under par</div>`;
-            $(body).html(div);
+            $('.body').html(div);
         } else if(p1score - totalPar == 0) {
-            $(body).html("");
+            $('.body').html("");
             let div = `<div class="final">You hit par</div>`;
-            $(body).html(div);
+            $('.body').html(div);
         }
     }
     console.log($(e).parent().parent().index());
