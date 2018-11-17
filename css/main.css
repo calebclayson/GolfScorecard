@@ -70,15 +70,15 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('https://swingbyswing-b9.s3.amazonaws.com/photo/in-round/12486769/uploaded-photo43828077-480x360.png');
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .wrapper:after {
     content: '';
-    width: 103%;
-    height: 103%;
+    width: 123%;
+    height: 123%;
     background: inherit;
     position: absolute;
-    top: 0;
+    top: -60px;
     left: -10px;
     filter: blur(10px);   
 }
@@ -86,5 +86,17 @@ body {
 .in-wrapper {
     position: relative;
     z-index: 1;
-    margin: 1em 4em;
+    margin: 3em 5em;
+}
+
+@media only screen and (max-width: 1100px) {
+    .wrapper {
+        height: 170%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        height: 500%;
+    }
 }
