@@ -237,15 +237,15 @@ function totals(e) {
     if($(e).parent().parent().index() == 17) {
         if(p1score - totalPar > 0) {
             $('.body').html("");
-            let div = `<div class="final">Your score is ${p1score - totalPar} over par</div>`;
+            let div = `<div class="final"><div>Your score is ${p1score - totalPar} over par<div><div>Better luck next time!</div></div>`;
             $('.body').html(div);
         } else if(p1score - totalPar < 0) {
             $('.body').html("");
-            let div = `<div class="final">Your score is ${-(p1score-totalPar)} under par</div>`;
+            let div = `<div class="final"><div>Your score is ${-(p1score-totalPar)} under par</div><div>Nice job!</div></div>`;
             $('.body').html(div);
         } else if(p1score - totalPar == 0) {
             $('.body').html("");
-            let div = `<div class="final">You hit par</div>`;
+            let div = `<div class="final"><div>You hit par</div><div>Right on Target!</div></div>`;
             $('.body').html(div);
         }
     }
