@@ -60,6 +60,7 @@ function chooseTee(e) {
 }
 
 function displayHoleColumns() {
+    $('.wrapper').css('background-image', `url('${mycourse.thumbnail}')`);
     $('.grid-container').html('');
     for (let i = 0; i < mycourse.holes.length; i++) {
         $('.grid-container').append(`
