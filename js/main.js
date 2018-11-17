@@ -112,7 +112,7 @@ function addHoles() {
         }
     }
     for (let h = 0; h <= mycourse.holes.length; h++) {
-        $(`#col${h + 1}`).append(`<div>Info</div>`);
+        $(`#col${h + 1}`).append(`<div class="info">Info</div>`);
     }
     addYards();
     addPar();
@@ -248,7 +248,6 @@ function totals(e) {
             $('.body').html(div);
         }
     }
-    console.log($(e).parent().parent().index());
     totalBoxUpdate();
 }
 
