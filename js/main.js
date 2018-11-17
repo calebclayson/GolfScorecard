@@ -15,6 +15,8 @@ let p4score = 0;
 let p4in = 0;
 let p4out = 0;
 let totalBoxUp = false;
+let lastHoleScore = false;
+let totalPar;
 
 (function () {
     $.ajax({
@@ -153,7 +155,7 @@ function totalBoxUpdate() {
         let par = $(`#col${i}`).find('.par-label').html().charAt(7);
         pars.push(par);
     }
-    let totalPar = 0;
+    totalPar = 0;
     for(let i = 0; i < pars.length; i++){
         totalPar += Number(pars[i]);
     }
@@ -231,6 +233,22 @@ function totals(e) {
     } else {
         console.log('an error has occured with scoring');
     }
+    if($(e).parent().parent().index() == 17) {
+        if(p1score - totalPar > 0) {
+            $(body).html("");
+            let div = `<div class="final">Your score is ${p1score - totalPar} over par</div>`;
+            $(body).html(div);
+        } else if(p1score - totalPar < 0) {
+            $(body).html("");
+            let div = `<div class="final">Your score is ${-(p1score-totalPar)} under par</div>`;
+            $(body).html(div);
+        } else if(p1score - totalPar == 0) {
+            $(body).html("");
+            let div = `<div class="final">You hit par</div>`;
+            $(body).html(div);
+        }
+    }
+    console.log($(e).parent().parent().index());
     totalBoxUpdate();
 }
 
